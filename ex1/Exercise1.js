@@ -42,81 +42,8 @@ $(".btn2").click(function(){
         $.get("https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts",{userid:2}, function(argument){// asking the question ? where is the id=10
        $('.results').text(JSON.stringify(argument))
         });})
-   $(".btn5").click(function(){
-            $.post("https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts",{
-            userID: 1,
-            title: "My New Post",
-            body: "This is the body"
-        },function(info){
-            console.log(info.id)
-            $('#results').text(JSON.stringify(info.id))
-        })
-   })
+   
 
-   $(".btn6").click(function replacePost(id) {
-	$.ajax({
-		method: "PUT",
-		url: "https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts/14",
-		data:{
-			userID:1,
-			title: "New Post",
-			body: "New post added"
-		}, 
-		complete: function(response){
-			console.log(response.responseJSON);
-		}
-	})
-})
 
-$(".btn7").click(function updateTitle(id){
-	$.ajax({
-		method: 'PATCH',
-		url: "https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts/14",
-		data: {
-			title: "Patched/Updated it"
-		},
-		complete: function(response){
-			console.log(response.responseJSON);
-		}
-	})
-})
-function deletePost(id){
-	$.ajax({
-		method: 'DELETE',
-		url: "https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts/14",
-		complete: function(response){
-			console.log(response.statusText);
-		}
-	})
-}    
-$('.btn8).click(function(){
-    $.ajax({
-    
-        method: 'DELETE',
-        url: 'https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts/14',
-            complete: function(response){
-                //console.log(response.responseJSON);
-                var li = $('<li></li>');
-                li.text(JSON.stringify(response));
-                $('body').append(li);
-                }
+
         
-        // function(result){
-        // 	console.log(result);
-            
-            })
-        });  
-$(".btn9'").click(function(){
-	$.get('https://my-json-server.typicode.com/zachhall/WIN2020_AjaxPromises/posts', function(users){
-		//Iterate over the response, adding elements to DOM
-		users.forEach(function(){
-			console.log(users);
-			var li = $('<li></li>');
-			li.text(JSON.stringify(users));
-		$('body').append(li);
-		})
-	})
-})
-$('.btn10').click(function(){...
-
-})
